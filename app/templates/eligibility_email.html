@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Eligibility Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            color: #e63946;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Scholarship Application Update</h1>
+        </div>
+        <div class="content">
+            <p>Dear {{ full_name }},</p>
+            <p>Thank you for applying to the Smart Scholarship Program. After careful review of your application, we regret to inform you that you do not meet the eligibility criteria for this semester’s scholarship award.</p>
+            <p>The eligibility requirements include:
+                <ul>
+                    <li>A minimum cumulative GPA of 3.2</li>
+                    <li>Enrollment in at least 12 credit hours during the semester</li>
+                    <li>A maximum age of 23 at the application date</li>
+                </ul>
+            </p>
+            <p>We encourage you to continue your academic pursuits and invite you to apply again in the future if you meet the eligibility criteria.</p>
+        </div>
+        <div class="footer">
+            <p>Best regards,</p>
+            <p>The Scholarship Committee</p>
+            <p>Smart Scholarship Program</p>
+        </div>
+    </div>
+</body>
+</html>

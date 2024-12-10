@@ -1,23 +1,20 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_mail import Mail
+from flask_migrate import Migrate
 
 db = SQLAlchemy()
-mail = Mail()
+migrate = Migrate()
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object('config.Config')
 
     db.init_app(app)
-    mail.init_app(app)
+    migrate.init_app(app, db)
 
     with app.app_context():
-        from . import routes, models
-        db.create_all()
+        from .models import Applicant, Awardee  # Import your models here
 
-        # Populate mock data
-        from mock_data.mock_students import populate_mock_data
-        populate_mock_data(db)
+        # Register Blueprints or other configurations if necessary
 
     return app
